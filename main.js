@@ -52,10 +52,6 @@ ul.innerHTML=html;
 
 
 
-let a=1;
-let b=a++;
-console.log(a)
-console.log(b)
 
 
 
