@@ -1,57 +1,45 @@
-'use strict'
-function click(){
-    console.log(this)
-}
+'use strict';
 
-
-
-let data=[
-    {name:'home',link:'/'},
-    {name:'About us',link:'page/about-us'},
-    {name:'Contacts',link:'page/contacts'},
-    {name:'Gallery',link:'page/gallery'},
+var data = [
+    { name: 'Home', link: '/' },
+    { name: 'About as', link: 'page/about-as' },
+    { name: 'Contacts', link: 'page/contacts' },
+    { name: 'Gallery', link: 'page/gallery' },
     {
-
-        name:'Catalog',
-        link:'page/catalolg',
-        child:[
-            {name:'Category-1',link:'catgory/1'},
-            {name:'Category-2',link:'catgory/2'},
-            {name:'Category-3',link:'catgory/3'},
+        name: 'Catalog',
+        link: 'page/catalog',
+        child: [
+            { name: 'Category-1', link: 'category/1' },
+            { name: 'Category-2', link: 'category/2' },
+            { name: 'Category-3', link: 'category/3' },
         ]
+    },
+    { name: 'Support', link: 'page/support' }
+]
 
-},              
-    {name:'Support',link:'page/support'},
-]           
-
-function hover(e){
-   console.log(e)
+function hover(li) {
+    console.log(li);
 }
 
+var ul = document.querySelector('#menu');
+var html = '';
 
+data.forEach(function (item) {
 
-let ul=document.querySelector('#menu')
- let html='';
+    var childHtml = '';
 
-data.forEach(function (item){//переменная для обьектов внутри массива
-    var childhtml=""
-    if(item.child){//проверка на дочерний елемент
-        childhtml='<ul >'
-        item.child.forEach(function(item){   
-            childhtml+=`<li><a  href=${item.link}>${item.name}</a></li>`;
+    if(item.child) {
+        childHtml += '<ul>';
+        item.child.forEach(function (item) {
+            childHtml += `<li><a href=${item.link}>${item.name}</a></li>`;
         });
-        childhtml+="</ul>"
-
+        childHtml += '</ul>';
     }
-    var event = item.child? 'onmouseenter="hover(this)"': '';
-   html+=`<li class="drop"${event}><a  href=${item.link}>${item.name}</a>${childhtml}</li>`;
-   
+
+    var event = item.child ? 'class="drop"' : '';
+
+    html += `<li ${event} ><a href=${item.link}>${item.name}</a>${childHtml}</li>`;
+
 })
-ul.innerHTML=html;
 
-
-
-
-
-
-
+ul.innerHTML = html;

@@ -309,6 +309,8 @@ function hi(message){
     return `hello ${message}`
 }
 
+//////////////////////////////////////
+
 
 var hi2=message=>`hello ${message}`;        
 console.log(hi2("User"));
@@ -339,3 +341,9 @@ user2.showName();
 
 car.show=user1.showName;
 
+
+
+
+
+
+/////////21.09
