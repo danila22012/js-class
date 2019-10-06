@@ -1,0 +1,20 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+.slider{
+    height: 300px;
+    max-width: 600px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: space-between;
+    transition: 1s;
+}
+.slider button{
+    cursor: pointer;
+    border: none;
+}
+.slider button:hover{
+    background: #c4c4c4;
+}

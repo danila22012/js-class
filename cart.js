@@ -13,7 +13,6 @@ const products = [
 
 
 
-
 const productManager = {
     products: [],
     cart: {},
@@ -72,3 +71,17 @@ productManager.products=products;
 productManager.render();
 
 
+
+function User (name, age){
+
+    const obj={};
+
+    obj.name = name;
+    obj.age = age;
+
+    return obj;
+}
+
+
+let vasa = User('vasa', 25);
+    

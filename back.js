@@ -295,7 +295,7 @@ fetch(url)
         send();
     }
     window.myUser=user;//вывели в глобальную область
-})();
+})();           
 
 myUser.pay();
 
